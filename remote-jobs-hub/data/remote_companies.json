@@ -1,0 +1,97 @@
+[
+    {
+        "Name": "Name",
+        "Website": "Website",
+        "Region": "Region"
+    },
+    {
+        "Name": "10up",
+        "Website": "https://10up.com/",
+        "Region": "Worldwide"
+    },
+    {
+        "Name": "15Five",
+        "Website": "https://www.15five.com",
+        "Region": "Europe, Americas"
+    },
+    {
+        "Name": "17hats",
+        "Website": "https://www.17hats.com/",
+        "Region": "Worldwide"
+    },
+    {
+        "Name": "18F",
+        "Website": "https://18f.gsa.gov/",
+        "Region": "USA"
+    },
+    {
+        "Name": "1Password",
+        "Website": "https://www.1password.com",
+        "Region": "North America, UK"
+    },
+    {
+        "Name": "42",
+        "Website": "https://www.42technologies.com/",
+        "Region": "Worldwide"
+    },
+    {
+        "Name": "abiturma",
+        "Website": "https://www.abiturma.de/",
+        "Region": "Germany"
+    },
+    {
+        "Name": "Ably",
+        "Website": "https://www.ably.io/",
+        "Region": "Europe"
+    },
+    {
+        "Name": "Abstract",
+        "Website": "https://www.abstractapi.com",
+        "Region": "Worldwide"
+    },
+    {
+        "Name": "acct",
+        "Website": "https://acct.global",
+        "Region": "Worldwide"
+    },
+    {
+        "Name": "Acivilate",
+        "Website": "https://acivilate.com/",
+        "Region": "USA"
+    },
+    {
+        "Name": "Acquia",
+        "Website": "https://www.acquia.com/",
+        "Region": "Worldwide"
+    },
+    {
+        "Name": "ActiveCampaign",
+        "Website": "https://www.activecampaign.com/",
+        "Region": "Dublin, Ireland; USA"
+    },
+    {
+        "Name": "Adaface",
+        "Website": "https://www.adaface.com",
+        "Region": "Asia"
+    },
+    {
+        "Name": "AddStructure",
+        "Website": "https://www.bazaarvoice.com/",
+        "Region": "USA"
+    },
+    {
+        "Name": "Adeva",
+        "Website": "https://adevait.com/",
+        "Region": "Asia, Africa, Europe, South America, USA"
+    },
+    {
+        "Name": "Adzuna",
+        "Website": "https://www.adzuna.co.uk/",
+        "Region": "Worldwide"
+    },
+    {
+        "Name": "AE Studio",
+        "Website": "https://ae.studio/",
+        "Region": "USA, Brazil"
+    }
+]
