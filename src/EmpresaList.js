@@ -41,10 +41,20 @@ export default function RemoteCompaniesPage() {
     }, []);
 
     return (
-        <div className="min-h-screen flex flex-col items-center p-6 bg-black text-white">
-            <h1 className="text-3xl font-bold mb-6">Remote Companies</h1>
+        <div className="min-h-screen bg-black text-white flex flex-col items-center p-6">
+            {/* 🚀 Header com Logo */}
+            <header className="w-full max-w-4xl flex items-center justify-between bg-gray-900 p-4 rounded-lg shadow">
+                <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-blue-500 text-white flex items-center justify-center rounded-full text-2xl font-bold">
+                        R
+                    </div>
+                    <span className="text-xl font-semibold">Rodrigo Camargo Development</span>
+                </div>
+            </header>
 
-            <div className="flex gap-4 mb-6">
+            <h1 className="text-3xl font-bold mt-6">Remote Companies</h1>
+
+            <div className="flex gap-4 mt-6 mb-6">
                 <input
                     type="text"
                     placeholder="Search by name"
@@ -72,8 +82,26 @@ export default function RemoteCompaniesPage() {
             <ul className="w-full max-w-2xl bg-gray-900 shadow rounded p-4 text-white">
                 {companies.length > 0 ? (
                     companies.map((company, index) => (
-                        <li key={index} className="border-b border-gray-700 p-2">
-                            <strong>{company.Name}</strong> - {company.Region}
+                        <li key={index} className="border-b border-gray-700 p-2 flex items-center gap-3">
+                            {/* 🔥 Ícone da empresa */}
+                            {company.Logo ? (
+                                <img
+                                    src={company.Logo}
+                                    alt={`${company.Name} Logo`}
+                                    className="w-12 h-12 rounded-full bg-white p-1"
+                                />
+                            ) : (
+                                <img
+                                    src={`https://logo.clearbit.com/${company.Name.toLowerCase().replace(/\s+/g, '')}.com`}
+                                    alt={`${company.Name} Logo`}
+                                    className="w-12 h-12 rounded-full bg-white p-1"
+                                    onError={(e) => (e.target.style.display = "none")} 
+                                />
+                            )}
+
+                            <div>
+                                <strong>{company.Name}</strong> - {company.Region}
+                            </div>
                         </li>
                     ))
                 ) : (
