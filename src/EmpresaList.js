@@ -82,7 +82,7 @@ export default function RemoteCompaniesPage() {
             <ul className="w-full max-w-2xl bg-gray-900 shadow rounded p-4 text-white">
                 {companies.length > 0 ? (
                     companies.map((company, index) => (
-                        <li key={index} className="border-b border-gray-700 p-2 flex items-center gap-3">
+                        <li key={index} className="border-b border-gray-700 p-2 flex items-center gap-4">
                             {/* 🔥 Ícone da empresa */}
                             {company.Logo ? (
                                 <img
@@ -99,8 +99,18 @@ export default function RemoteCompaniesPage() {
                                 />
                             )}
 
-                            <div>
-                                <strong>{company.Name}</strong> - {company.Region}
+                            {/* 🔗 Nome, Região e Website */}
+                            <div className="flex flex-col">
+                                <strong>{company.Name}</strong>
+                                <span className="text-gray-400">{company.Region}</span>
+                                <a 
+                                    href={company.Website} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="text-blue-400 hover:text-blue-300 text-sm"
+                                >
+                                    {company.Website}
+                                </a>
                             </div>
                         </li>
                     ))
