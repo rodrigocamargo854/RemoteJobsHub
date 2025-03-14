@@ -159,11 +159,7 @@
         "Website":"https:\/\/alan.com\/",
         "Region":"Europe"
     },
-    {
-        "Name":"-ATUL",
-        "Website":"KUMAR",
-        "Region":"(LINKEDIN)"
-    },
+    
     {
         "Name":"Algorand",
         "Website":"https:\/\/www.algorand.com\/",
@@ -309,11 +305,7 @@
         "Website":"https:\/\/auth0.com\/",
         "Region":"Worldwide"
     },
-    {
-        "Name":"-ATUL",
-        "Website":"KUMAR",
-        "Region":"(LINKEDIN)"
-    },
+    
     {
         "Name":"Automattic",
         "Website":"https:\/\/automattic.com\/",
@@ -469,11 +461,7 @@
         "Website":"https:\/\/boldare.com",
         "Region":"Worldwide"
     },
-    {
-        "Name":"-ATUL",
-        "Website":"KUMAR",
-        "Region":"(LINKEDIN)"
-    },
+   
     {
         "Name":"Bonsai",
         "Website":"https:\/\/www.hellobonsai.com",
@@ -3693,10 +3681,6 @@
         "Name":"Zup",
         "Website":"https:\/\/zup.com.br\/",
         "Region":"Brazil"
-    },
-    {
-        "Name":"-ATUL",
-        "Website":"KUMAR",
-        "Region":"(LINKEDIN)"
     }
+   
 ]
