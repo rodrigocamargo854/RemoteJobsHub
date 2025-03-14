@@ -4,9 +4,13 @@ import { useState, useEffect } from "react";
 
 export default function RemoteCompaniesPage() {
     const [companies, setCompanies] = useState([]);
+    const [visibleCompanies, setVisibleCompanies] = useState([]);
     const [searchName, setSearchName] = useState("");
     const [searchRegion, setSearchRegion] = useState("");
     const [loading, setLoading] = useState(false);
+    const [loadMoreDisabled, setLoadMoreDisabled] = useState(false);
+    
+    const BATCH_SIZE = 10;
 
     const fetchCompanies = async () => {
         setLoading(true);
@@ -19,7 +23,6 @@ export default function RemoteCompaniesPage() {
     
             if (params.toString()) url += `?${params.toString()}`;
 
-            console.log("Fetching:", url);
             const response = await fetch(url);
     
             if (!response.ok) {
@@ -27,18 +30,29 @@ export default function RemoteCompaniesPage() {
             }
 
             const data = await response.json();
-            console.log("Received data:", data);
 
             setCompanies(data);
+            setVisibleCompanies(data.slice(0, BATCH_SIZE));
+            setLoadMoreDisabled(data.length <= BATCH_SIZE);
         } catch (error) {
             console.error("Error fetching companies:", error);
         }
         setLoading(false);
     };
-    
+
     useEffect(() => {
         fetchCompanies(); 
     }, []);
+
+    const handleLoadMore = () => {
+        const currentLength = visibleCompanies.length;
+        const nextBatch = companies.slice(currentLength, currentLength + BATCH_SIZE);
+        setVisibleCompanies([...visibleCompanies, ...nextBatch]);
+
+        if (visibleCompanies.length + nextBatch.length >= companies.length) {
+            setLoadMoreDisabled(true);
+        }
+    };
 
     return (
         <div className="min-h-screen bg-black text-white flex flex-col items-center p-6">
@@ -79,8 +93,8 @@ export default function RemoteCompaniesPage() {
             {loading && <p>Loading...</p>}
 
             <ul className="w-full max-w-2xl bg-gray-900 shadow rounded p-4 text-white">
-                {companies.length > 0 ? (
-                    companies.map((company, index) => (
+                {visibleCompanies.length > 0 ? (
+                    visibleCompanies.map((company, index) => (
                         <li key={index} className="border-b border-gray-700 p-3 flex flex-col sm:flex-row sm:items-center gap-4">
                             {company.Logo ? (
                                 <img
@@ -115,6 +129,15 @@ export default function RemoteCompaniesPage() {
                     <p className="text-center">No companies found.</p>
                 )}
             </ul>
+
+            {!loadMoreDisabled && (
+                <button
+                    onClick={handleLoadMore}
+                    className="bg-green-500 text-white px-4 py-2 mt-4 rounded hover:bg-green-600"
+                >
+                    Load More
+                </button>
+            )}
         </div>
     );
 }
